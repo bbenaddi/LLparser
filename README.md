@@ -48,7 +48,8 @@ SYMBOL    +   *   (   )   a   b   $
   T               7       7   7
   C       9   8   9   9   9   9   9
   F               10      11  12
- This table is declare(M) and intilized in our program, normally we set rule in the table but to simplify we set numbers. ```
+ This table is declare(M) and intilized in our program, 
+ normally we set rule in the table but to simplify we set numbers.
 ```
 
 ## LL Algorithm:
