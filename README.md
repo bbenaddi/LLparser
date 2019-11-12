@@ -58,7 +58,7 @@ SYMBOL    +   *   (   )   a   b   $
  DO
     X sommet of the stack
     a current lettre
-    IF
+    IF X is non-teerminal THEN
       IF M[X,a] == X -> Y1...Y3 THEN
         pop the X.
         push Yn...Y1 (in revrse order)
