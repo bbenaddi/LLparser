@@ -56,7 +56,7 @@ SYMBOL    +   *   (   )   a   b   $
  ```
  push $R to our stack.
  DO
-    X sommet of the stack
+    X head of the stack
     a current lettre
     IF X is non-teerminal THEN
       IF M[X,a] == X -> Y1...Y3 THEN
