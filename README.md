@@ -1,12 +1,14 @@
 # LLparser
 Left-to-right, Leftmost derivation
 
-we will consider the following small LL(1) grammar: 
+## Grammar :
 
+we will consider the following small LL(1) grammar: 
 G : R -> RR | R+R | R* | (R) | a | b
 
-the grammar is ambiguous. so we construct an equivalent unambiguous grammar G' :
+## Remove ambiguous and left recursion:
 
+the grammar is ambiguous. so we construct an equivalent unambiguous grammar G' :
      R -> R + E | E
 G':  E -> ET | T
      T -> T* | F
@@ -21,7 +23,7 @@ G''' B -> TB | e      [5,6]
      C -> *C | e      [8,9]
      F -> (R) | a | b [10,11,12]
  
-Build the FIRST and FOLLOW set for this new grammar.
+## Build the FIRST and FOLLOW table :
 SYMBOL	     FIRST	      FOLLOW
   R         (,a,b          ),$
   A         +,e            ),$
@@ -31,7 +33,7 @@ SYMBOL	     FIRST	      FOLLOW
   C         *,e            a,b,+,(,),$
   F         (,a,b          a,b,*,+,(,),$
   
-Finally let's build the table of LL
+## Finally let's build the table of LL :
 SYMBOL    +   *   (   )   a   b   $
   R               1       1   1         
   A       2           3           3
@@ -42,7 +44,8 @@ SYMBOL    +   *   (   )   a   b   $
   F               10      11  12
  This table is declare(M) and intilized in our program, normally we set rule in the table but to simplify we set numbers.
  
- LL Algorithm:
+ ## LL Algorithm:
+ ```
  push $R to our stack.
  DO
     X sommet of the stack
@@ -71,3 +74,4 @@ SYMBOL    +   *   (   )   a   b   $
       FI
     FI
  WHILE !ERROR or !ACC
+```
